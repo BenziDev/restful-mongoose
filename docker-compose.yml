@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: restful-mongoose
+    restart: 'always'
+    build: .
+    ports:
+      - '3005:3005'
+    links:
+      - mongo3
+  mongo3:
+    container_name: mongo3
+    image: mongo
+    ports:
+      - '27017:27017'
